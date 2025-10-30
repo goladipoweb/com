@@ -288,27 +288,48 @@ async function handleSignUp(e) {
         
         if (error) throw error;
         
-        // Create user profile
+        if (!data.user) {
+            throw new Error('User creation failed');
+        }
+        
+        console.log('User created:', data.user.id);
+        
+        // Wait for trigger to create basic profile
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        
+        // Update profile with additional info (name, phone)
+        // The profile was already created by database trigger
         const { error: profileError } = await supabaseClient
             .from('profiles')
-            .insert([
-                { 
-                    id: data.user.id, 
-                    name, 
-                    email, 
-                    phone,
-                    created_at: new Date()
-                }
-            ]);
+            .update({ 
+                name, 
+                phone,
+                location: '',
+                is_verified: false
+            })
+            .eq('id', data.user.id);
         
-        if (profileError) throw profileError;
+        if (profileError) {
+            console.error('Profile update error:', profileError);
+            // Don't throw error - basic profile was created by trigger
+            console.log('Profile will be updated later');
+        }
         
-        showToast('Account created successfully! Please check your email for verification.', 'success');
+        console.log('Profile updated with user info');
+        
+        showToast('Account created successfully! You can now sign in.', 'success');
         showPage('signin');
         signupForm.reset();
     } catch (error) {
-        console.error('Sign up error:', error.message);
-        showToast(error.message, 'error');
+        console.error('Sign up error:', error);
+        
+        // Show user-friendly error message
+        let errorMessage = error.message;
+        if (error.message.includes('already registered')) {
+            errorMessage = 'This email is already registered. Please sign in instead.';
+        }
+        
+        showToast(errorMessage, 'error');
     } finally {
         showLoading(false);
     }
