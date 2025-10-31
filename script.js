@@ -86,9 +86,8 @@ async function initApp() {
         updateUIForAuth();
         loadUserProducts();
         loadUserProfile();
-        loadConversations();
+        // Messaging disabled for now
         loadVerificationStatus();
-        setupMessageSubscription();
     }
     
     // Set up event listeners
@@ -161,19 +160,7 @@ function setupEventListeners() {
         clearFiltersBtn.addEventListener('click', clearFilters);
     }
     
-    // Messaging
-    if (sendMessageBtn) {
-        sendMessageBtn.addEventListener('click', sendMessage);
-    }
-    
-    if (messageText) {
-        messageText.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter' && !e.shiftKey) {
-                e.preventDefault();
-                sendMessage();
-            }
-        });
-    }
+    // Messaging disabled for now
     
     // Verification
     if (verifyForm) {
@@ -631,11 +618,6 @@ function createProductCard(product, isSearchResult) {
                         <a href="tel:${product.profiles?.phone || ''}" class="contact-btn">
                             <i class="fas fa-phone"></i>
                         </a>
-                        ${currentUser && currentUser.id !== product.seller_id ? `
-                            <button class="contact-btn" onclick="startConversation('${product.seller_id}', '${sellerName}')">
-                                <i class="fas fa-comment"></i>
-                            </button>
-                        ` : ''}
                     </div>
                 ` : `
                     <span>${product.is_active ? 'Active' : 'Inactive'}</span>
