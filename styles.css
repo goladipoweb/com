@@ -383,6 +383,55 @@ body {
     line-height: 1.7;
 }
 
+.brands {
+    padding: 4rem 0;
+}
+
+.brands .container {
+    max-width: 1100px;
+}
+
+.brands-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.brands-header h2 {
+    font-size: 2.25rem;
+    color: white;
+    margin-bottom: 0.75rem;
+}
+
+.brands-header p {
+    color: #e0e7ff;
+    font-size: 1.1rem;
+}
+
+.brands-logos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.5rem;
+}
+
+.brand-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--primary);
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    transition: var(--transition);
+}
+
+.brand-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-xl);
+}
+
 /* ============================================
    SEARCH SECTION - Clean & Functional
    ============================================ */
@@ -1300,6 +1349,10 @@ body {
         grid-template-columns: 1fr;
     }
     
+    .brands-logos {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+
     .filter-actions {
         flex-direction: column;
     }

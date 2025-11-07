@@ -61,11 +61,7 @@ const sendMessageBtn = document.getElementById('sendMessageBtn');
 const unreadBadge = document.getElementById('unreadBadge');
 
 // Verification Elements
-const verificationStatus = document.getElementById('verificationStatus');
-const verificationForm = document.getElementById('verificationForm');
-const verifyForm = document.getElementById('verifyForm');
-const idDocument = document.getElementById('idDocument');
-const businessDocument = document.getElementById('businessDocument');
+// Verification (disabled)
 
 // Event Listeners
 document.addEventListener('DOMContentLoaded', initApp);
@@ -87,7 +83,7 @@ async function initApp() {
         loadUserProducts();
         loadUserProfile();
         // Messaging disabled for now
-        loadVerificationStatus();
+        // Verification disabled for now
     }
     
     // Set up event listeners
@@ -162,10 +158,7 @@ function setupEventListeners() {
     
     // Messaging disabled for now
     
-    // Verification
-    if (verifyForm) {
-        verifyForm.addEventListener('submit', handleVerificationSubmit);
-    }
+    // Verification disabled
 }
 
 // Toggle mobile menu
@@ -1074,174 +1067,6 @@ function setupMessageSubscription() {
             }
         )
         .subscribe();
-}
-
-// ===== VERIFICATION SYSTEM =====
-
-// Load verification status
-async function loadVerificationStatus() {
-    if (!currentUser) return;
-    
-    try {
-        const { data, error } = await supabaseClient
-            .from('verifications')
-            .select('*')
-            .eq('user_id', currentUser.id)
-            .single();
-        
-        if (error && error.code !== 'PGRST116') throw error;
-        
-        displayVerificationStatus(data);
-    } catch (error) {
-        console.error('Load verification error:', error.message);
-    }
-}
-
-// Display verification status
-function displayVerificationStatus(verification) {
-    if (!verification) {
-        verificationStatus.innerHTML = `
-            <div class="status-card unverified">
-                <div class="status-icon"><i class="fas fa-user"></i></div>
-                <div class="status-info">
-                    <h4>Not Verified</h4>
-                    <p>Complete the form below to get verified and build buyer trust</p>
-                </div>
-            </div>
-        `;
-        verificationForm.style.display = 'block';
-        return;
-    }
-    
-    let statusClass, icon, title, description;
-    
-    switch (verification.status) {
-        case 'verified':
-            statusClass = 'verified';
-            icon = 'fa-check-circle';
-            title = 'Verified Seller';
-            description = 'Your account has been verified! You now have a verified badge.';
-            verificationForm.style.display = 'none';
-            break;
-        case 'pending':
-            statusClass = 'pending';
-            icon = 'fa-clock';
-            title = 'Verification Pending';
-            description = 'Your verification is under review. We\'ll notify you soon!';
-            verificationForm.style.display = 'none';
-            break;
-        case 'rejected':
-            statusClass = 'rejected';
-            icon = 'fa-times-circle';
-            title = 'Verification Rejected';
-            description = `Reason: ${verification.rejection_reason || 'Please review and resubmit.'}`;
-            verificationForm.style.display = 'block';
-            break;
-        default:
-            statusClass = 'unverified';
-            icon = 'fa-user';
-            title = 'Not Verified';
-            description = 'Complete the form to get verified';
-            verificationForm.style.display = 'block';
-    }
-    
-    verificationStatus.innerHTML = `
-        <div class="status-card ${statusClass}">
-            <div class="status-icon ${statusClass}"><i class="fas ${icon}"></i></div>
-            <div class="status-info">
-                <h4>${title}</h4>
-                <p>${description}</p>
-            </div>
-        </div>
-    `;
-    
-    // Update profile is_verified status
-    if (verification.status === 'verified') {
-        supabaseClient
-            .from('profiles')
-            .update({ is_verified: true })
-            .eq('id', currentUser.id);
-    }
-}
-
-// Handle verification form submission
-async function handleVerificationSubmit(e) {
-    e.preventDefault();
-    showLoading(true);
-    
-    const businessName = document.getElementById('businessName').value;
-    const businessAddress = document.getElementById('businessAddress').value;
-    const businessPhone = document.getElementById('businessPhone').value;
-    const idDocFile = idDocument.files[0];
-    const businessDocFile = businessDocument.files[0];
-    
-    try {
-        let idDocUrl = null;
-        let businessDocUrl = null;
-        
-        // Upload ID document
-        if (idDocFile) {
-            const fileExt = idDocFile.name.split('.').pop();
-            const fileName = `id_${currentUser.id}_${Date.now()}.${fileExt}`;
-            const filePath = `verifications/${currentUser.id}/${fileName}`;
-            
-            const { error: uploadError } = await supabaseClient.storage
-                .from('verification-documents')
-                .upload(filePath, idDocFile);
-            
-            if (uploadError) throw uploadError;
-            
-            const { data: urlData } = supabaseClient.storage
-                .from('verification-documents')
-                .getPublicUrl(filePath);
-            
-            idDocUrl = urlData.publicUrl;
-        }
-        
-        // Upload business document if provided
-        if (businessDocFile) {
-            const fileExt = businessDocFile.name.split('.').pop();
-            const fileName = `business_${currentUser.id}_${Date.now()}.${fileExt}`;
-            const filePath = `verifications/${currentUser.id}/${fileName}`;
-            
-            const { error: uploadError } = await supabaseClient.storage
-                .from('verification-documents')
-                .upload(filePath, businessDocFile);
-            
-            if (uploadError) throw uploadError;
-            
-            const { data: urlData } = supabaseClient.storage
-                .from('verification-documents')
-                .getPublicUrl(filePath);
-            
-            businessDocUrl = urlData.publicUrl;
-        }
-        
-        // Submit verification request
-        const { error } = await supabaseClient
-            .from('verifications')
-            .upsert([{
-                user_id: currentUser.id,
-                business_name: businessName,
-                business_address: businessAddress,
-                business_phone: businessPhone,
-                id_document_url: idDocUrl,
-                business_document_url: businessDocUrl,
-                status: 'pending',
-                submitted_at: new Date()
-            }]);
-        
-        if (error) throw error;
-        
-        showToast('Verification submitted successfully! We\'ll review it soon.', 'success');
-        verifyForm.reset();
-        loadVerificationStatus();
-    } catch (error) {
-        console.error('Verification submit error:', error.message);
-        showToast(error.message, 'error');
-    } finally {
-        showLoading(false);
-    }
 }
 
 // Initialize database tables (run this once to set up your database)
