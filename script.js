@@ -141,6 +141,21 @@ function setupEventListeners() {
     tabBtns.forEach(btn => {
         btn.addEventListener('click', handleTabChange);
     });
+
+    // Enable any element inside the dashboard with data-tab to switch tabs (e.g., "Add Product" button in empty state)
+    const dashboardSection = document.getElementById('dashboard');
+    if (dashboardSection) {
+        dashboardSection.addEventListener('click', (e) => {
+            const tabTrigger = e.target.closest('[data-tab]');
+            if (tabTrigger) {
+                e.preventDefault();
+                const tab = tabTrigger.getAttribute('data-tab');
+                if (tab) {
+                    switchTab(tab);
+                }
+            }
+        });
+    }
     
     // Image preview
     if (productImage) {
