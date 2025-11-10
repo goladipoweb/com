@@ -101,6 +101,11 @@ function setupEventListeners() {
     navLinks.forEach(link => {
         link.addEventListener('click', handleNavigation);
     });
+    // Enable all elements with data-page (e.g., hero buttons, footer links)
+    const pageTriggers = document.querySelectorAll('[data-page]');
+    pageTriggers.forEach(el => {
+        el.addEventListener('click', handleNavigation);
+    });
     
     // Authentication
     if (signinForm) {
