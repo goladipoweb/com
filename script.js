@@ -138,6 +138,11 @@ function setupEventListeners() {
         addProductForm.addEventListener('submit', handleAddProduct);
     }
     
+    const editProductForm = document.getElementById('editProductForm');
+    if (editProductForm) {
+        editProductForm.addEventListener('submit', handleUpdateProduct);
+    }
+    
     if (profileForm) {
         profileForm.addEventListener('submit', handleUpdateProfile);
     }
@@ -165,6 +170,11 @@ function setupEventListeners() {
     // Image preview
     if (productImage) {
         productImage.addEventListener('change', handleImagePreview);
+    }
+    
+    const editProductImage = document.getElementById('editProductImage');
+    if (editProductImage) {
+        editProductImage.addEventListener('change', handleEditImagePreview);
     }
     
     // Advanced search filters
@@ -637,19 +647,27 @@ function createProductCard(product, isSearchResult) {
                         </a>
                     </div>
                 ` : `
-                    <span>${product.is_active ? 'Active' : 'Inactive'}</span>
-                    <button class="btn btn-danger btn-sm" data-id="${product.id}">
-                        <i class="fas fa-trash"></i> Delete
-                    </button>
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                        <span>${product.is_active ? 'Active' : 'Inactive'}</span>
+                        <button class="btn btn-primary btn-sm edit-product-btn" data-id="${product.id}" title="Edit Product">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button class="btn btn-danger btn-sm" data-id="${product.id}" title="Delete Product">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                    </div>
                 `}
             </div>
         </div>
     `;
     
-    // Add delete functionality for user's own products
+    // Add delete and edit functionality for user's own products
     if (!isSearchResult) {
         const deleteBtn = card.querySelector('.btn-danger');
         deleteBtn.addEventListener('click', () => deleteProduct(product.id));
+        
+        const editBtn = card.querySelector('.edit-product-btn');
+        editBtn.addEventListener('click', () => editProduct(product));
     }
     
     return card;
@@ -768,6 +786,118 @@ function handleImagePreview() {
         reader.readAsDataURL(file);
     } else {
         imagePreview.innerHTML = '';
+    }
+}
+
+// Handle image preview for edit product
+function handleEditImagePreview() {
+    const file = editProductImage.files[0];
+    const editImagePreview = document.getElementById('editImagePreview');
+    
+    if (file) {
+        const reader = new FileReader();
+        
+        reader.onload = function(e) {
+            editImagePreview.innerHTML = `<img src="${e.target.result}" alt="Preview">`;
+        };
+        
+        reader.readAsDataURL(file);
+    } else {
+        editImagePreview.innerHTML = '';
+    }
+}
+
+// Edit a product - load data into edit form
+function editProduct(product) {
+    // Populate edit form with product data
+    document.getElementById('editProductId').value = product.id;
+    document.getElementById('editProductName').value = product.name || '';
+    document.getElementById('editProductDescription').value = product.description || '';
+    document.getElementById('editProductPrice').value = product.price || '';
+    document.getElementById('editProductCategory').value = product.category || '';
+    
+    // Show current image
+    const editImagePreview = document.getElementById('editImagePreview');
+    if (product.image_url) {
+        editImagePreview.innerHTML = `<img src="${product.image_url}" alt="Current image">`;
+    } else {
+        editImagePreview.innerHTML = '';
+    }
+    
+    // Switch to edit tab
+    switchTab('edit-product');
+}
+
+// Handle updating a product
+async function handleUpdateProduct(e) {
+    e.preventDefault();
+    showLoading(true);
+    
+    const productId = document.getElementById('editProductId').value;
+    const name = document.getElementById('editProductName').value;
+    const description = document.getElementById('editProductDescription').value;
+    const price = parseFloat(document.getElementById('editProductPrice').value);
+    const category = document.getElementById('editProductCategory').value;
+    const imageFile = editProductImage.files[0];
+    
+    try {
+        let imageUrl = null;
+        
+        // Upload new image if provided
+        if (imageFile) {
+            const fileExt = imageFile.name.split('.').pop();
+            const fileName = `${Math.random()}.${fileExt}`;
+            const filePath = `products/${currentUser.id}/${fileName}`;
+            
+            const { error: uploadError } = await supabaseClient.storage
+                .from('product-images')
+                .upload(filePath, imageFile);
+            
+            if (uploadError) throw uploadError;
+            
+            // Get public URL
+            const { data: urlData } = supabaseClient.storage
+                .from('product-images')
+                .getPublicUrl(filePath);
+            
+            imageUrl = urlData.publicUrl;
+        }
+        
+        // Update product in database
+        const updateData = {
+            name,
+            description,
+            price,
+            category
+        };
+        
+        // Only update image if a new one was uploaded
+        if (imageUrl) {
+            updateData.image_url = imageUrl;
+        }
+        
+        const { error } = await supabaseClient
+            .from('products')
+            .update(updateData)
+            .eq('id', productId)
+            .eq('seller_id', currentUser.id);
+        
+        if (error) throw error;
+        
+        showToast('Product updated successfully!', 'success');
+        editProductForm.reset();
+        document.getElementById('editImagePreview').innerHTML = '';
+        
+        // Reload user products
+        loadUserProducts();
+        
+        // Switch back to products tab
+        switchTab('products');
+    } catch (error) {
+        console.error('Update product error:', error.message);
+        showToast(error.message, 'error');
+    } finally {
+        showLoading(false);
     }
 }
 
