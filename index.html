@@ -26,8 +26,8 @@
                     <a href="#" class="nav-link" data-page="dashboard">Dashboard</a>
                     <a href="#" class="nav-link" id="logoutBtn">Logout</a>
                 </div>
-                <a href="https://wa.me/2348028031011" class="nav-link support-btn" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Customer Support
+                <a href="#" class="nav-link support-btn" id="chatboxToggle">
+                    <i class="fas fa-comments"></i> AI Assistant
                 </a>
             </div>
             <div class="hamburger" id="hamburger">
@@ -391,7 +391,7 @@
                     <ul>
                         <li><a href="#" data-page="home">Home</a></li>
                         <li><a href="#" data-page="search">Search Parts</a></li>
-                        <li><a href="https://wa.me/2348028031011" target="_blank">Customer Support</a></li>
+                        <li><a href="#" id="chatboxToggleFooter">AI Assistant</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -415,6 +415,35 @@
 
     <!-- Toast Notifications -->
     <div id="toast" class="toast"></div>
+
+    <!-- AI Chatbox -->
+    <div id="aiChatbox" class="ai-chatbox">
+        <div class="chatbox-header">
+            <div class="chatbox-header-content">
+                <i class="fas fa-robot"></i>
+                <div>
+                    <h3>AI Assistant</h3>
+                    <p class="chatbox-status">Online</p>
+                </div>
+            </div>
+            <button class="chatbox-close" id="chatboxClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chatbox-messages" id="chatboxMessages"></div>
+        <div class="chatbox-input-container">
+            <input type="text" id="chatboxInput" placeholder="Type your message..." autocomplete="off">
+            <button id="chatboxSend" class="chatbox-send-btn">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Chatbox Toggle Button (Floating) -->
+    <button id="chatboxToggleFloat" class="chatbox-toggle-btn">
+        <i class="fas fa-comments"></i>
+        <span class="chatbox-badge">AI</span>
+    </button>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <!-- Load local, untracked config (create config.js from config.sample.js) -->
