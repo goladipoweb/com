@@ -1359,22 +1359,57 @@ const categories = [
 ];
 
 const mechanicalTopics = [
-    {
-        id: 'overheating',
-        keywords: ['overheating', 'over heating', 'engine hot', 'running hot', 'temperature high', 'heat gauge']
-    },
-    {
-        id: 'brakeNoise',
-        keywords: ['brake noise', 'brakes squeal', 'squeaking brake', 'grinding brake', 'brake sound', 'screeching brake']
-    },
-    {
-        id: 'noStart',
-        keywords: ['won\'t start', 'no start', 'car not starting', 'engine won\'t crank', 'starter problem', 'battery dead']
-    },
-    {
-        id: 'roughIdle',
-        keywords: ['rough idle', 'engine misfire', 'idling rough', 'misfiring', 'shaking at idle', 'engine hesitation']
-    }
+    { id: 'overheating', keywords: ['overheating', 'over heating', 'engine hot', 'running hot', 'temperature high', 'heat gauge'] },
+    { id: 'brakeNoise', keywords: ['brake noise', 'brakes squeal', 'squeaking brake', 'grinding brake', 'brake sound', 'screeching brake'] },
+    { id: 'noStart', keywords: ['won\'t start', 'no start', 'car not starting', 'engine won\'t crank', 'starter problem', 'battery dead', 'battery or starter'] },
+    { id: 'roughIdle', keywords: ['rough idle', 'engine misfire', 'idling rough', 'misfiring', 'shaking at idle', 'engine hesitation'] },
+    { id: 'engineShake', keywords: ['car shaking when i start', 'engine shaking', 'vibration at startup', 'car vibrates on start', 'engine shudder'] },
+    { id: 'checkEngine', keywords: ['check engine light', 'engine light', 'malfunction indicator', 'cel on'] },
+    { id: 'fuelConsumption', keywords: ['consuming too much fuel', 'high fuel consumption', 'poor fuel economy', 'bad mileage', 'uses too much fuel'] },
+    { id: 'engineMisfire', keywords: ['engine misfiring', 'misfire under load', 'engine misses', 'misfire when driving'] },
+    { id: 'exhaustSmoke', keywords: ['black smoke', 'white smoke', 'blue smoke', 'smoke from exhaust'] },
+    { id: 'oilType', keywords: ['what type of engine oil', 'best engine oil', 'engine oil for nigeria', 'oil should i use'] },
+    { id: 'engineKnock', keywords: ['knocking sound', 'engine knock', 'pinging noise', 'rod knock'] },
+    { id: 'batteryDrain', keywords: ['battery drain', 'battery dies quickly', 'battery draining overnight', 'battery losing charge'] },
+    { id: 'batteryReplacement', keywords: ['need new battery', 'replace battery', 'battery weak signs', 'when to change battery'] },
+    { id: 'dimLights', keywords: ['lights are dim', 'dim headlights', 'faint lights'] },
+    { id: 'alternator', keywords: ['alternator bad', 'alternator problem', 'charging system issue'] },
+    { id: 'autoJerking', keywords: ['automatic gear jerking', 'transmission jerking', 'gear jerk', 'gear change jerks'] },
+    { id: 'gearSlipping', keywords: ['gear slipping', 'transmission slipping', 'gear drops out'] },
+    { id: 'transFluidInterval', keywords: ['change transmission fluid', 'transmission fluid interval', 'how often change transmission oil'] },
+    { id: 'manualShift', keywords: ['manual gear hard', 'hard to shift', 'stiff gearshift', 'manual gear difficult'] },
+    { id: 'softBrake', keywords: ['brake pedal soft', 'spongy brake', 'brake pedal sinks'] },
+    { id: 'wornShocks', keywords: ['car bouncing', 'bouncy ride', 'need new shocks', 'suspension bouncing'] },
+    { id: 'steeringVibration', keywords: ['steering wheel vibrates', 'wheel vibration high speed', 'shaking steering'] },
+    { id: 'pulling', keywords: ['car pulls to one side', 'vehicle drifting', 'car not driving straight'] },
+    { id: 'coolantLoss', keywords: ['radiator water finishes', 'coolant disappearing', 'radiator losing water'] },
+    { id: 'trafficOverheat', keywords: ['overheating in traffic', 'lagos traffic overheating', 'hot in traffic'] },
+    { id: 'coolantVsWater', keywords: ['need coolant or water', 'coolant vs water', 'should i use coolant'] },
+    { id: 'noAcceleration', keywords: ['refuses to accelerate', 'no acceleration', 'car won\'t accelerate', 'no power when accelerating'] },
+    { id: 'jerkDriving', keywords: ['car jerks when driving', 'jerking while driving', 'car stutters driving'] },
+    { id: 'fuelAdditives', keywords: ['nigerian fuel additives', 'should i use fuel additives', 'fuel treatment nigeria'] },
+    { id: 'tyrePressure', keywords: ['what tyre pressure', 'tire pressure nigeria', 'recommended tyre psi'] },
+    { id: 'tyreWear', keywords: ['tyres wear out quickly', 'uneven tyre wear', 'tires wearing fast'] },
+    { id: 'tyreReplacement', keywords: ['when to change tyres', 'tyre replacement schedule', 'tire age limit'] },
+    { id: 'hardSteering', keywords: ['steering hard', 'stiff steering', 'hard to turn steering'] },
+    { id: 'acNotCooling', keywords: ['ac not cooling', 'ac blowing hot', 'air conditioner warm'] },
+    { id: 'acIntermittent', keywords: ['ac cools sometimes', 'ac stops cooling', 'ac intermittent'] },
+    { id: 'acGasOrLeak', keywords: ['refill ac gas', 'ac leak', 'need gas or fix leak'] },
+    { id: 'serviceInterval', keywords: ['how often service car', 'service interval', 'car servicing schedule'] },
+    { id: 'oilInterval', keywords: ['when change engine oil', 'oil change interval', 'how often change oil'] },
+    { id: 'preTrip', keywords: ['check before long trip', 'long trip checklist', 'prepare car for trip'] },
+    { id: 'mechanicCheating', keywords: ['mechanic cheating', 'mechanic overcharging', 'how know mechanic honest'] },
+    { id: 'partMatch', keywords: ['which part do i need', 'part for my car model', 'compatible parts'] },
+    { id: 'tokunboVsNew', keywords: ['tokunbo or new parts', 'buy tokunbo', 'used vs new parts'] },
+    { id: 'genuinePart', keywords: ['part original', 'how know original part', 'genuine parts'] },
+    { id: 'affordableParts', keywords: ['affordable parts lagos', 'where get parts lagos', 'cheap parts lagos'] },
+    { id: 'absLight', keywords: ['abs light', 'abs warning'] },
+    { id: 'batteryLight', keywords: ['battery light', 'charging light on dashboard'] },
+    { id: 'oilLight', keywords: ['oil light', 'oil pressure light'] },
+    { id: 'tractionLight', keywords: ['traction control light', 'esp light', 'stability light'] },
+    { id: 'immobilizer', keywords: ['immobilizer not letting car start', 'immobiliser issue', 'security system lockout'] },
+    { id: 'alarm', keywords: ['alarm going off', 'alarm randomly', 'car alarm keeps sounding'] },
+    { id: 'keyFob', keywords: ['key fob not working', 'remote not working', 'car remote dead'] }
 ];
 
 const languageOptions = [
@@ -1925,6 +1960,920 @@ const mechanicalAdviceContent = {
             ],
             caution: `Idan fitilar check-engine na walƙiya, guji taka gas da ƙarfi domin kare catalytic converter.`,
             buyPrompt: `Ka sanar da ni idan kana so in nemo maka plugs, coils da tace iska a GoLadipo.`
+        }
+    },
+    engineShake: {
+        english: {
+            summary: `Shaking when you start the car usually means a cylinder isn’t firing smoothly or the engine mounts are weak.`,
+            stepsIntro: `Check these items:`,
+            steps: [
+                `Scan for misfire codes and inspect spark plugs plus ignition coils on the affected cylinders.`,
+                `Look at the engine mounts—if the rubber is cracked or oil-soaked, the engine will rock at startup.`,
+                `Clean the throttle body and run injector cleaner through a full tank to clear partially clogged injectors.`
+            ],
+            partsIntro: `Parts that commonly cure the shake:`,
+            parts: [
+                `Spark plugs`,
+                `Ignition coils`,
+                `Engine/transmission mounts`,
+                `Fuel injector cleaner`
+            ],
+            caution: `Severe vibration can damage exhaust joints and wiring, so don’t ignore it for long.`,
+            buyPrompt: `Let me know when you want me to search GoLadipo for these ignition or mount parts.`
+        }
+    },
+    checkEngine: {
+        english: {
+            summary: `The “Check Engine” light turns on whenever the ECU stores a fault code.`,
+            stepsIntro: `Do this first:`,
+            steps: [
+                `Use an OBD-II scanner to read fault codes and note the exact code numbers.`,
+                `Address the issue the code points to—common causes include loose fuel caps, bad oxygen sensors, or misfires.`,
+                `After repairs, clear the code and confirm it does not return during a short drive.`
+            ],
+            partsIntro: `Likely parts based on frequent codes:`,
+            parts: [
+                `OBD-II scanner`,
+                `Oxygen sensor`,
+                `Ignition coil packs`,
+                `EVAP purge valve / gas cap`
+            ],
+            caution: `A flashing light means the engine is misfiring badly—stop driving to avoid catalyst damage.`,
+            buyPrompt: `Say the word and I’ll help you source the sensors or ignition parts you need.`
+        }
+    },
+    fuelConsumption: {
+        english: {
+            summary: `Poor fuel economy comes from incorrect tune, drag, or low-quality fuel.`,
+            stepsIntro: `Run through these checks:`,
+            steps: [
+                `Ensure basic service items are fresh—engine oil, air filter, spark plugs, and tyre pressures.`,
+                `Inspect the oxygen sensors and MAF sensor; a dirty or failed sensor makes the ECU run too rich.`,
+                `Verify brakes aren’t dragging and wheel alignment is correct so the car rolls freely.`
+            ],
+            partsIntro: `Parts that typically restore good mileage:`,
+            parts: [
+                `Air filter`,
+                `Spark plugs`,
+                `Oxygen sensor`,
+                `Mass airflow sensor cleaner`,
+                `Fuel filter`
+            ],
+            caution: `Driving with a rich mixture can wash down cylinders and clog the catalytic converter.`,
+            buyPrompt: `I can search GoLadipo for filters and sensors whenever you’re ready.`
+        }
+    },
+    engineMisfire: {
+        english: {
+            summary: `Misfires under load point to weak spark, clogged fuel delivery, or compression issues.`,
+            stepsIntro: `Check these:`,
+            steps: [
+                `Inspect spark plugs for fouling and replace the full set if they’re worn.`,
+                `Swap ignition coils between cylinders to see if the misfire follows the coil.`,
+                `Clean or replace the fuel injectors and confirm fuel pressure is within spec.`
+            ],
+            partsIntro: `Helpful parts:`,
+            parts: [
+                `Spark plugs`,
+                `Ignition coil packs`,
+                `Fuel injectors / injector cleaner`,
+                `Fuel pump / pressure regulator`
+            ],
+            caution: `Prolonged misfires dump raw fuel into the catalytic converter and can ruin it.`,
+            buyPrompt: `Ready for repairs? I can help you locate plugs, coils, or injectors on GoLadipo.`
+        }
+    },
+    exhaustSmoke: {
+        english: {
+            summary: `Smoke colour tells you what’s burning: black (rich fuel), white (coolant), blue (oil).`,
+            stepsIntro: `Use this guide:`,
+            steps: [
+                `Black smoke: check air filter, MAF, and injectors for stuck-rich operation.`,
+                `White sweet-smelling smoke: test for coolant leaks, bad head gasket, or cracked radiator tank.`,
+                `Blue smoke: inspect PCV valve, turbo seals, and piston rings for oil consumption.`
+            ],
+            partsIntro: `Parts that commonly fix smoke issues:`,
+            parts: [
+                `Air filter / MAF sensor`,
+                `Fuel injectors`,
+                `PCV valve`,
+                `Head gasket kit`,
+                `Turbo oil seal kit`
+            ],
+            caution: `Continuous smoke can foul plugs and attract police attention; fix the root cause quickly.`,
+            buyPrompt: `Tell me which colour you’re seeing and I’ll help you find the right parts.`
+        }
+    },
+    oilType: {
+        english: {
+            summary: `For Nigeria’s hot climate, use quality multi-grade oil with the viscosity recommended in your owner’s manual.`,
+            stepsIntro: `General rule of thumb:`,
+            steps: [
+                `Most modern petrol engines do well with 5W-30 or 5W-40 fully synthetic oil in Lagos heat.`,
+                `High-mileage or older engines that consume oil can step up to 10W-40.`,
+                `Always pair the oil change with a quality oil filter rated for at least the same interval.`
+            ],
+            partsIntro: `Pick up:`,
+            parts: [
+                `Engine oil (OEM-approved spec)`,
+                `Oil filter`,
+                `Drain plug washer`
+            ],
+            caution: `Avoid fake-labelled oils—buy from reputable sellers and check tamper seals.`,
+            buyPrompt: `Need the best oil brand for your engine? I can shortlist options on GoLadipo.`
+        }
+    },
+    engineKnock: {
+        english: {
+            summary: `Knocking, pinging, or rattling means abnormal combustion or loose internal components.`,
+            stepsIntro: `Take these actions:`,
+            steps: [
+                `Confirm you’re using fuel with the right octane; detonation happens with low-octane petrol.`,
+                `Listen at idle—deep knocks that rise with RPM can indicate worn rod bearings.`,
+                `Use a mechanic’s stethoscope to pinpoint noise around the timing chain or accessory drive.`
+            ],
+            partsIntro: `Possible fixes:`,
+            parts: [
+                `Higher-octane fuel / octane booster`,
+                `Knock sensor`,
+                `Timing chain kit`,
+                `Engine bearings / overhaul kit`
+            ],
+            caution: `A loud rod knock means the engine could seize; tow the car instead of driving.`,
+            buyPrompt: `Let me know the diagnosis and I’ll help you source the right internal parts.`
+        }
+    },
+    batteryDrain: {
+        english: {
+            summary: `Rapid battery drain usually points to parasitic draw, bad wiring, or a failing battery.`,
+            stepsIntro: `Check these quickly:`,
+            steps: [
+                `Test the battery with a multimeter: 12.6V at rest, 13.8–14.4V while running.`,
+                `Inspect for lights or accessories that stay on after shutdown.`,
+                `Have an auto electrician perform a parasitic draw test and isolate the faulty circuit.`
+            ],
+            partsIntro: `Common replacements:`,
+            parts: [
+                `Car battery`,
+                `Battery terminals / cables`,
+                `Alternator`,
+                `Accessory relays`
+            ],
+            caution: `Frequent deep discharges drastically shorten battery life—fix the drain ASAP.`,
+            buyPrompt: `Need a new battery or charging components? I can locate them on GoLadipo.`
+        }
+    },
+    batteryReplacement: {
+        english: {
+            summary: `If the battery is over three years old or fails load tests, plan to replace it.`,
+            stepsIntro: `Signs you need a fresh battery:`,
+            steps: [
+                `Slow cranking speed even after charging.`,
+                `Swollen case or leaking electrolyte.`,
+                `Failing a professional load test (drops below 9.6V at 50% load).`
+            ],
+            partsIntro: `Buy the following:`,
+            parts: [
+                `Correct group-size battery`,
+                `Battery terminal protectors`,
+                `Smart charger (optional)`
+            ],
+            caution: `Match the cold-cranking amps (CCA) to the manufacturer’s minimum spec.`,
+            buyPrompt: `Tell me your vehicle model and I’ll suggest batteries that fit.`
+        }
+    },
+    dimLights: {
+        english: {
+            summary: `Dim headlights indicate weak voltage supply or corroded wiring.`,
+            stepsIntro: `Inspect this:`,
+            steps: [
+                `Measure battery and alternator voltage.`,
+                `Clean ground straps and headlight connectors of corrosion.`,
+                `Upgrade to heavy-duty headlight relays if you’re running halogen upgrades.`
+            ],
+            partsIntro: `Useful parts:`,
+            parts: [
+                `Alternator`,
+                `Battery cables/grounds`,
+                `Headlight bulbs`,
+                `Headlight relay harness`
+            ],
+            caution: `Low voltage can overheat headlight switches—repair the root cause.`,
+            buyPrompt: `Need brighter, safer lighting? I can help source bulbs and wiring kits.`
+        }
+    },
+    alternator: {
+        english: {
+            summary: `A bad alternator won’t maintain 13.8–14.4V while the engine runs.`,
+            stepsIntro: `Verify it like this:`,
+            steps: [
+                `Check belt tension and listen for whining bearings.`,
+                `Measure output directly at the alternator B+ terminal.`,
+                `Load-test with lights and AC on; voltage should stay above 13.5V.`
+            ],
+            partsIntro: `Likely parts:`,
+            parts: [
+                `Alternator assembly`,
+                `Drive belt`,
+                `Voltage regulator`,
+                `Battery (if damaged by undercharge)`
+            ],
+            caution: `Never disconnect the battery while running; voltage spikes can fry the ECU.`,
+            buyPrompt: `Ready for a replacement alternator? I’ll find reliable options on GoLadipo.`
+        }
+    },
+    autoJerking: {
+        english: {
+            summary: `Jerky shifts in an automatic mean the fluid is dirty, low, or the solenoids are sticking.`,
+            stepsIntro: `Try this:`,
+            steps: [
+                `Check fluid level and colour—burnt smell or dark brown fluid needs changing.`,
+                `Update the software/adaptation if your transmission supports it.`,
+                `Clean or replace shift solenoids and the valve body if debris is present.`
+            ],
+            partsIntro: `Helpful parts:`,
+            parts: [
+                `ATF (manufacturer-approved)`,
+                `Transmission filter kit`,
+                `Shift solenoids`,
+                `Valve body gaskets`
+            ],
+            caution: `Never mix random ATF types; wrong fluid causes clutch damage.`,
+            buyPrompt: `I can help you order the exact ATF and filter kit for your gearbox.`
+        }
+    },
+    gearSlipping: {
+        english: {
+            summary: `Slipping gears happen when clutches are worn or fluid pressure is low.`,
+            stepsIntro: `Check these items:`,
+            steps: [
+                `Ensure ATF level is correct and there are no leaks at the cooler lines.`,
+                `Perform a stall-speed test; high RPM with little movement means the clutches are gone.`,
+                `Have a specialist check line pressure and rebuild if necessary.`
+            ],
+            partsIntro: `Possible fixes:`,
+            parts: [
+                `Transmission rebuild kit`,
+                `ATF & filter`,
+                `Torque converter`
+            ],
+            caution: `Continuing to drive while slipping burns the clutches completely—tow it if severe.`,
+            buyPrompt: `Want quotes for a rebuild kit or converter? I can point you to trusted sellers.`
+        }
+    },
+    transFluidInterval: {
+        english: {
+            summary: `Most automatics in Nigerian traffic need ATF changes every 40,000–60,000 km or 2–3 years.`,
+            stepsIntro: `Follow this plan:`,
+            steps: [
+                `Use the exact ATF spec listed on your dipstick or owner’s manual.`,
+                `Replace the pan gasket and internal filter when draining.`,
+                `Consider a fluid exchange if the oil is very dark, but avoid power flushing on high-mileage units.`
+            ],
+            partsIntro: `Service kit:`,
+            parts: [
+                `ATF (correct spec)`,
+                `Transmission filter`,
+                `Pan gasket`,
+                `Drain plug washer`
+            ],
+            caution: `Overfilling or underfilling ATF can damage internal seals.`,
+            buyPrompt: `Need a complete service kit? I can source it on GoLadipo.`
+        }
+    },
+    manualShift: {
+        english: {
+            summary: `Hard-to-shift manuals usually have clutch hydraulic issues or worn linkage.`,
+            stepsIntro: `Inspect these:`,
+            steps: [
+                `Check clutch fluid level and bleed the master/slave cylinders.`,
+                `Inspect the shifter cables or linkage bushings for play.`,
+                `Use the factory-approved gearbox oil; old oil thickens and makes shifts stiff.`
+            ],
+            partsIntro: `Parts to consider:`,
+            parts: [
+                `Clutch master/slave cylinder`,
+                `Shifter bushings or cables`,
+                `Manual transmission oil`
+            ],
+            caution: `Grinding gears means synchros are wearing—avoid forcing the lever.`,
+            buyPrompt: `When you’re ready, I can help you order clutch hydraulics or bushings.`
+        }
+    },
+    softBrake: {
+        english: {
+            summary: `A soft pedal indicates air in the system, fluid leaks, or a failing master cylinder.`,
+            stepsIntro: `Do this:`,
+            steps: [
+                `Inspect brake lines, hoses, and calipers for leaks.`,
+                `Bleed all four wheels with fresh DOT-rated fluid.`,
+                `If the pedal still sinks, replace the master cylinder.`
+            ],
+            partsIntro: `Common fixes:`,
+            parts: [
+                `Brake fluid`,
+                `Brake hoses`,
+                `Master cylinder`,
+                `Brake booster (if vacuum leak)`
+            ],
+            caution: `Do not drive until the brakes feel firm—safety first.`,
+            buyPrompt: `Need a bleed kit or master cylinder? I’ll source them for you.`
+        }
+    },
+    wornShocks: {
+        english: {
+            summary: `Excessive bouncing means the shocks or struts have lost damping.`,
+            stepsIntro: `Check these:`,
+            steps: [
+                `Perform the bounce test—if the car keeps oscillating, the shocks are done.`,
+                `Inspect for oil leaking down the shock body.`,
+                `Look at bushings and mounts; replace if cracked.`
+            ],
+            partsIntro: `Order:`,
+            parts: [
+                `Shock absorbers / struts`,
+                `Shock mounts`,
+                `Control arm bushings`
+            ],
+            caution: `Worn shocks increase stopping distance and tyre wear.`,
+            buyPrompt: `Ready for fresh suspension? I can help you pick the right shocks.`
+        }
+    },
+    steeringVibration: {
+        english: {
+            summary: `Steering vibration at speed usually means wheel imbalance, warped rotors, or worn bushings.`,
+            stepsIntro: `Try this:`,
+            steps: [
+                `Balance all four wheels and rotate tyres.`,
+                `Check brake rotors for warping if vibration happens while braking.`,
+                `Inspect tie-rods and control-arm bushings for play.`
+            ],
+            partsIntro: `Likely parts:`,
+            parts: [
+                `Wheel balancing weights`,
+                `Brake rotors`,
+                `Tie-rod ends`,
+                `Control-arm bushings`
+            ],
+            caution: `Loose steering components can fail suddenly—repair quickly.`,
+            buyPrompt: `Need rotors or steering parts? I can line up options on GoLadipo.`
+        }
+    },
+    pulling: {
+        english: {
+            summary: `Pulling to one side indicates alignment issues, tyre pressure mismatch, or sticky brakes.`,
+            stepsIntro: `Inspect this:`,
+            steps: [
+                `Set tyre pressures evenly.`,
+                `Have a professional alignment done and check suspension bushings.`,
+                `Ensure calipers slide freely; a seized caliper will drag one wheel.`
+            ],
+            partsIntro: `Parts to look at:`,
+            parts: [
+                `Tie-rod ends`,
+                `Control arm bushings`,
+                `Brake calipers`,
+                `Wheel alignment shims`
+            ],
+            caution: `Severe pulling can make the car unsafe in wet conditions—repair before highway driving.`,
+            buyPrompt: `Tell me what failed and I’ll help you source the suspension or brake parts.`
+        }
+    },
+    coolantLoss: {
+        english: {
+            summary: `Coolant disappearing points to leaks or internal gasket issues.`,
+            stepsIntro: `Work through these:`,
+            steps: [
+                `Pressure-test the cooling system and inspect hoses, radiator, and heater core.`,
+                `Check for milky oil or white smoke that indicates a head-gasket leak.`,
+                `Examine the water pump weep hole for coolant trails.`
+            ],
+            partsIntro: `Useful parts:`,
+            parts: [
+                `Radiator / hoses`,
+                `Water pump`,
+                `Head gasket kit`,
+                `Coolant reservoir cap`
+            ],
+            caution: `Running low on coolant will overheat and warp the cylinder head.`,
+            buyPrompt: `Need replacement hoses or gaskets? I can find them on GoLadipo.`
+        }
+    },
+    trafficOverheat: {
+        english: {
+            summary: `Overheating in Lagos traffic usually means poor airflow or weak fans.`,
+            stepsIntro: `Check this:`,
+            steps: [
+                `Confirm both radiator fans switch on when the AC is running.`,
+                `Clean debris from the condenser/radiator fins.`,
+                `Make sure the thermostat and radiator cap are working to maintain pressure.`
+            ],
+            partsIntro: `Helpful parts:`,
+            parts: [
+                `Radiator fan motor`,
+                `Fan relay / fuse`,
+                `Thermostat`,
+                `Radiator cap`
+            ],
+            caution: `Avoid switching the engine off immediately after a hot run—let the fans cool it first.`,
+            buyPrompt: `I can help you order quality fan motors or thermostats anytime.`
+        }
+    },
+    coolantVsWater: {
+        english: {
+            summary: `Always use proper coolant—not just water—to prevent rust and boiling.`,
+            stepsIntro: `Guidelines:`,
+            steps: [
+                `Mix concentrated coolant 50/50 with distilled water unless the bottle is premixed.`,
+                `Coolant raises boiling point and contains corrosion inhibitors vital for aluminium engines.`,
+                `Top up only when the engine is cool to avoid burns.`
+            ],
+            partsIntro: `Pick up:`,
+            parts: [
+                `OEM-approved coolant`,
+                `Distilled water`,
+                `Coolant funnel / bleed kit`
+            ],
+            caution: `Plain water will rust the system and boil away in traffic.`,
+            buyPrompt: `Ready to switch to proper coolant? I’ll find trusted brands on GoLadipo.`
+        }
+    },
+    noAcceleration: {
+        english: {
+            summary: `Sluggish acceleration comes from fuel starvation, clogged filters, or limp-mode.`,
+            stepsIntro: `Check this:`,
+            steps: [
+                `Scan for throttle or boost-related codes (limp mode).`,
+                `Replace the fuel filter and test fuel pressure under load.`,
+                `Inspect the throttle body and accelerator pedal sensor for faults.`
+            ],
+            partsIntro: `Likely fixes:`,
+            parts: [
+                `Fuel pump / filter`,
+                `Throttle body or TPS`,
+                `Air intake hose`
+            ],
+            caution: `If the car cannot exceed low speed, avoid highways until repairs are done.`,
+            buyPrompt: `Tell me the diagnosis and I’ll help source the fuel or throttle parts.`
+        }
+    },
+    jerkDriving: {
+        english: {
+            summary: `Jerking while cruising indicates misfires, clogged fuel delivery, or worn transmission mounts.`,
+            stepsIntro: `Focus on:`,
+            steps: [
+                `Check ignition components (plugs/coils) and replace if worn.`,
+                `Clean the MAF sensor and throttle body.`,
+                `Inspect transmission mounts and drive shafts for excessive play.`
+            ],
+            partsIntro: `Parts to consider:`,
+            parts: [
+                `Spark plugs / coils`,
+                `Mass airflow sensor cleaner`,
+                `Fuel injectors`,
+                `Transmission mounts`
+            ],
+            caution: `Ignoring jerks can damage drivetrain components over time.`,
+            buyPrompt: `Need these ignition or mount parts? I’ll locate them on GoLadipo.`
+        }
+    },
+    fuelAdditives: {
+        english: {
+            summary: `Use only reputable fuel additives—avoid questionable roadside products.`,
+            stepsIntro: `Best practice:`,
+            steps: [
+                `Stick to top-tier fuel brands when possible.`,
+                `Use injector cleaner from trusted names only when needed (rough idle, poor economy).`,
+                `Avoid mixing multiple additives at once—they can damage injectors.`
+            ],
+            partsIntro: `If you must use additives, buy:`,
+            parts: [
+                `Brand-name fuel injector cleaner`,
+                `Octane booster (for knocking engines)`
+            ],
+            caution: `Never pour kerosene or unknown chemicals into your tank.`,
+            buyPrompt: `I can point you to verified fuel additives stocked by GoLadipo sellers.`
+        }
+    },
+    tyrePressure: {
+        english: {
+            summary: `Most passenger cars in Nigeria run 32–35 PSI; always follow the door-jamb sticker.`,
+            stepsIntro: `Tips:`,
+            steps: [
+                `Check pressures when tyres are cold.`,
+                `Adjust for load—add 2 PSI if carrying many passengers or cargo.`,
+                `Use a digital gauge for accuracy.`
+            ],
+            partsIntro: `Handy tools:`,
+            parts: [
+                `Tyre inflator`,
+                `Digital pressure gauge`,
+                `Valve caps`
+            ],
+            caution: `Underinflated tyres overheat quickly in Lagos heat.`,
+            buyPrompt: `Need an inflator or gauge? I’ll help you order one.`
+        }
+    },
+    tyreWear: {
+        english: {
+            summary: `Fast tyre wear means alignment, rotation, or inflation issues.`,
+            stepsIntro: `Do this:`,
+            steps: [
+                `Rotate tyres every 10,000 km.`,
+                `Get a four-wheel alignment after suspension work or pothole hits.`,
+                `Replace worn suspension bushings and ball joints.`
+            ],
+            partsIntro: `Common parts:`,
+            parts: [
+                `Tyres`,
+                `Tie-rods`,
+                `Control arm bushings`,
+                `Wheel alignment shims`
+            ],
+            caution: `Bald tyres hydroplane easily—replace them before the rainy season.`,
+            buyPrompt: `I can recommend durable tyre brands available in Lagos.`
+        }
+    },
+    tyreReplacement: {
+        english: {
+            summary: `Replace tyres every 4–5 years or 50,000 km, sooner if tread is below 2/32".`,
+            stepsIntro: `Watch for:`,
+            steps: [
+                `Check the DOT date code; e.g., 2319 = week 23 of 2019.`,
+                `Inspect for cracks, bulges, or punctures near the sidewall.`,
+                `Replace in pairs or sets to keep handling predictable.`
+            ],
+            partsIntro: `You’ll need:`,
+            parts: [
+                `New tyres`,
+                `Valve stems`,
+                `Wheel balancing weights`
+            ],
+            caution: `Old tyres harden and lose grip even if tread looks good.`,
+            buyPrompt: `Tell me your rim size and I’ll show tyre options on GoLadipo.`
+        }
+    },
+    hardSteering: {
+        english: {
+            summary: `Heavy steering can be caused by low power-steering fluid, pump failure, or ball-joint binding.`,
+            stepsIntro: `Inspect:`,
+            steps: [
+                `Check fluid level/condition and top up with the correct spec.`,
+                `Inspect the power-steering belt and pump for leaks.`,
+                `Grease or replace tight ball joints and steering rack bushings.`
+            ],
+            partsIntro: `Likely parts:`,
+            parts: [
+                `Power-steering fluid`,
+                `Steering pump`,
+                `Rack and pinion bushings`,
+                `Ball joints`
+            ],
+            caution: `Driving with no assist can damage the pump—fix leaks quickly.`,
+            buyPrompt: `Need steering components? I’ll help you find quality replacements.`
+        }
+    },
+    acNotCooling: {
+        english: {
+            summary: `If the AC blows warm, refrigerant is low or the compressor/fan isn’t working.`,
+            stepsIntro: `Check this:`,
+            steps: [
+                `Confirm the condenser fans run whenever the AC is on.`,
+                `Inspect for oily residue around hoses (sign of leaks).`,
+                `Measure high/low-side pressures to confirm charge level.`
+            ],
+            partsIntro: `Parts often required:`,
+            parts: [
+                `R134a refrigerant`,
+                `AC compressor`,
+                `Condenser fan`,
+                `Receiver/drier`
+            ],
+            caution: `Avoid topping up blindly—fix leaks before recharging.`,
+            buyPrompt: `Ready for AC repairs? I can source compressors, hoses, or refrigerant.`
+        }
+    },
+    acIntermittent: {
+        english: {
+            summary: `AC that cools sometimes usually has a weak clutch coil, clogged expansion valve, or icing evaporator.`,
+            stepsIntro: `Do this:`,
+            steps: [
+                `Listen for the compressor clutch clicking on/off rapidly.`,
+                `Clean cabin air filters to improve airflow.`,
+                `Check for freezing on the low-pressure line (low charge or bad TXV).`
+            ],
+            partsIntro: `Likely fixes:`,
+            parts: [
+                `Compressor clutch coil`,
+                `Expansion valve / orifice tube`,
+                `Cabin air filter`,
+                `Pressure switches`
+            ],
+            caution: `Repeated cycling overheats the compressor—repair soon.`,
+            buyPrompt: `Need these AC parts? I’ll help you find them.`
+        }
+    },
+    acGasOrLeak: {
+        english: {
+            summary: `If you keep “refilling gas,” there’s a leak—refrigerant doesn’t get consumed.`,
+            stepsIntro: `Proper fix:`,
+            steps: [
+                `Inject UV dye and locate the leak (hoses, condenser, evaporator).`,
+                `Replace faulty O-rings or components, then pull vacuum for 30 minutes.`,
+                `Recharge with the exact weight of refrigerant.`
+            ],
+            partsIntro: `Stock up on:`,
+            parts: [
+                `O-ring kit`,
+                `AC hoses / condenser`,
+                `Vacuum pump service`,
+                `R134a`
+            ],
+            caution: `Venturing refrigerant to the atmosphere is illegal and bad for health.`,
+            buyPrompt: `Ready to fix it properly? I can help source leak repair parts.`
+        }
+    },
+    serviceInterval: {
+        english: {
+            summary: `In Nigeria’s dusty, hot conditions, service your car every 5,000–7,500 km or 4 months.`,
+            stepsIntro: `Each service should include:`,
+            steps: [
+                `Engine oil + filter`,
+                `Air filter and cabin filter inspection`,
+                `Brake, suspension, and fluid checks`
+            ],
+            partsIntro: `Service kit:`,
+            parts: [
+                `Engine oil`,
+                `Oil filter`,
+                `Air & cabin filters`,
+                `Spark plugs (when due)`
+            ],
+            caution: `Long intervals lead to sludge and premature engine wear.`,
+            buyPrompt: `Need a full service kit? I can help you build one on GoLadipo.`
+        }
+    },
+    oilInterval: {
+        english: {
+            summary: `Most petrol engines running synthetic oil need changes every 5,000–7,500 km in Lagos traffic.`,
+            stepsIntro: `Remember:`,
+            steps: [
+                `Reset the service reminder so you don’t forget.`,
+                `Always replace the oil filter and inspect the drain plug washer.`,
+                `Record the mileage/date for warranty and resale value.`
+            ],
+            partsIntro: `Oil change essentials:`,
+            parts: [
+                `Correct engine oil`,
+                `Oil filter`,
+                `Drain plug washer`
+            ],
+            caution: `Driving far beyond schedule risks sludge and timing-chain wear.`,
+            buyPrompt: `Tell me your engine code and I’ll suggest the right oil/filter combo.`
+        }
+    },
+    preTrip: {
+        english: {
+            summary: `Before a long trip, inspect safety systems so you’re not stranded.`,
+            stepsIntro: `Checklist:`,
+            steps: [
+                `Check engine oil, coolant, brake fluid, and tyre pressure (including spare).`,
+                `Test all lights, wipers, and carry basic tools.`,
+                `Ensure documents (insurance, licence) are up to date.`
+            ],
+            partsIntro: `Handy items:`,
+            parts: [
+                `Tyre inflator`,
+                `Jumper cables`,
+                `Emergency triangle`,
+                `Spare belts/fuses`
+            ],
+            caution: `Fix any warning lights before hitting the expressway.`,
+            buyPrompt: `Need travel spares? I can help stock your emergency kit.`
+        }
+    },
+    mechanicCheating: {
+        english: {
+            summary: `Protect yourself by demanding transparency from your mechanic.`,
+            stepsIntro: `Tips:`,
+            steps: [
+                `Ask for old parts back to confirm replacements.`,
+                `Request a written quote and labour breakdown before work starts.`,
+                `Use trusted workshops or insist on being present during major repairs.`
+            ],
+            partsIntro: `Tools that help:`,
+            parts: [
+                `OBD-II scanner`,
+                `Torque wrench`
+            ],
+            caution: `If a mechanic refuses to show you damaged parts, consider a second opinion.`,
+            buyPrompt: `Need diagnostic tools to double-check work? I can source them for you.`
+        }
+    },
+    partMatch: {
+        english: {
+            summary: `To know the exact part you need, use your VIN or chassis number.`,
+            stepsIntro: `Steps:`,
+            steps: [
+                `Provide your car’s VIN to the parts seller.`,
+                `Compare part numbers stamped on the old component.`,
+                `Check trim level (engine size, transmission type) for compatibility.`
+            ],
+            partsIntro: `Bring along:`,
+            parts: [
+                `VIN/chassis card`,
+                `Photos of the old part`
+            ],
+            caution: `Guessing leads to returns and downtime—always cross-check numbers.`,
+            buyPrompt: `Share your VIN and I’ll help you shortlist exact-fit parts.`
+        }
+    },
+    tokunboVsNew: {
+        english: {
+            summary: `Tokunbo (used) parts are cheaper but may have limited life; new OEM parts last longer.`,
+            stepsIntro: `Consider:`,
+            steps: [
+                `Critical components (brakes, suspension, sensors) are best bought new.`,
+                `Body panels or non-critical trims can be tokunbo if inspected well.`,
+                `Always test used electrical parts before paying.`
+            ],
+            partsIntro: `When buying tokunbo:`,
+            parts: [
+                `Warranty receipt`,
+                `Visual inspection tools`
+            ],
+            caution: `Fake “new” parts exist—buy from reputable sellers only.`,
+            buyPrompt: `Tell me the component and I’ll compare tokunbo vs new prices for you.`
+        }
+    },
+    genuinePart: {
+        english: {
+            summary: `Original parts have clear markings, holograms, and solid packaging.`,
+            stepsIntro: `Verification tips:`,
+            steps: [
+                `Check for OEM logos, part numbers, and QR codes.`,
+                `Buy from authorised distributors who offer receipts.`,
+                `Compare weight and finish with your old genuine part.`
+            ],
+            partsIntro: `Bring:`,
+            parts: [
+                `OEM part number list`,
+                `UV light (for holograms)`
+            ],
+            caution: `If the price is too good to be true, it probably is.`,
+            buyPrompt: `Need help finding trusted sellers? I can recommend GoLadipo vendors.`
+        }
+    },
+    affordableParts: {
+        english: {
+            summary: `For fair prices in Lagos, compare listings and stick to verified GoLadipo sellers.`,
+            stepsIntro: `Best approach:`,
+            steps: [
+                `Get at least three quotes.`,
+                `Check seller ratings and warranty policy.`,
+                `Consider group-buy discounts for fleets.`
+            ],
+            partsIntro: `Bring when shopping:`,
+            parts: [
+                `Part numbers`,
+                `Sample photos`
+            ],
+            caution: `Avoid unverified roadside stalls for expensive electronics.`,
+            buyPrompt: `Ready for quotes? I’ll pull up affordable options right here.`
+        }
+    },
+    absLight: {
+        english: {
+            summary: `ABS light means the anti-lock brake system is disabled.`,
+            stepsIntro: `Check:`,
+            steps: [
+                `Scan for ABS codes—commonly failed wheel speed sensors.`,
+                `Inspect tone rings and wiring for damage.`,
+                `Bleed the system if you recently serviced brakes.`
+            ],
+            partsIntro: `Likely needs:`,
+            parts: [
+                `Wheel speed sensor`,
+                `ABS module repair`,
+                `Tone ring`
+            ],
+            caution: `You still have brakes but without ABS assist on slippery roads.`,
+            buyPrompt: `Need sensors or modules? I’ll help you locate them.`
+        }
+    },
+    batteryLight: {
+        english: {
+            summary: `Battery light on means the charging system isn’t keeping up.`,
+            stepsIntro: `Immediate checks:`,
+            steps: [
+                `Inspect the alternator belt.`,
+                `Measure charging voltage.`,
+                `Test the alternator and voltage regulator.`
+            ],
+            partsIntro: `Possible replacements:`,
+            parts: [
+                `Alternator`,
+                `Drive belt`,
+                `Voltage regulator`
+            ],
+            caution: `Your car can stall once the battery depletes—head to a workshop soon.`,
+            buyPrompt: `I can source alternators or regulators quickly—just ask.`
+        }
+    },
+    oilLight: {
+        english: {
+            summary: `Oil light on means low pressure—shut the engine off immediately.`,
+            stepsIntro: `Do not drive. Instead:`,
+            steps: [
+                `Check oil level and top up if low.`,
+                `Inspect for leaks (filter, pan gasket).`,
+                `If level is OK, the oil pump or pickup screen may be clogged—tow it to a mechanic.`
+            ],
+            partsIntro: `Potential repairs:`,
+            parts: [
+                `Engine oil`,
+                `Oil pump`,
+                `Oil pressure sensor`,
+                `Pickup screen`
+            ],
+            caution: `Running with the oil light on will destroy the engine within minutes.`,
+            buyPrompt: `Let me know what failed and I’ll help you get pumps, sensors, or seals.`
+        }
+    },
+    tractionLight: {
+        english: {
+            summary: `Traction/ESP lights point to wheel-speed sensors or steering angle calibration.`,
+            stepsIntro: `Follow this:`,
+            steps: [
+                `Scan the ABS/ESP module for codes.`,
+                `Check tyre sizes/pressures—mismatched tyres trigger the light.`,
+                `Recalibrate the steering angle sensor after alignment.`
+            ],
+            partsIntro: `Parts often needed:`,
+            parts: [
+                `Wheel speed sensors`,
+                `Steering angle sensor`,
+                `Yaw sensor`
+            ],
+            caution: `Without traction control, drive carefully on wet roads.`,
+            buyPrompt: `I can help you order the exact sensors you need.`
+        }
+    },
+    immobilizer: {
+        english: {
+            summary: `If the immobilizer won’t let the car start, it’s not recognising the key transponder.`,
+            stepsIntro: `Try this:`,
+            steps: [
+                `Use your spare key to rule out a faulty chip.`,
+                `Check battery voltage—low voltage confuses the immobiliser.`,
+                `Have the system scanned to reprogram keys or fix antenna rings.`
+            ],
+            partsIntro: `Likely needs:`,
+            parts: [
+                `Key transponder / key shell`,
+                `Immobilizer antenna ring`,
+                `ECU reprogramming service`
+            ],
+            caution: `Avoid bypass hacks; reprogramming is safer.`,
+            buyPrompt: `Need a new key or antenna? I’ll connect you to trusted locksmiths and parts sellers.`
+        }
+    },
+    alarm: {
+        english: {
+            summary: `Random alarm triggers come from weak key fob batteries or faulty sensors.`,
+            stepsIntro: `Check these:`,
+            steps: [
+                `Replace the key fob battery.`,
+                `Inspect hood/door switches for corrosion.`,
+                `Ensure aftermarket alarm wiring is tidy and grounded.`
+            ],
+            partsIntro: `Helpful replacements:`,
+            parts: [
+                `Key fob battery`,
+                `Door/hood switches`,
+                `Alarm control module`
+            ],
+            caution: `Disconnecting the siren is a temporary fix—solve the root cause.`,
+            buyPrompt: `Need switches or sirens? I’ll help you find them.`
+        }
+    },
+    keyFob: {
+        english: {
+            summary: `Unresponsive key fobs usually need new batteries or reprogramming.`,
+            stepsIntro: `Do this:`,
+            steps: [
+                `Replace the coin battery (CR2032/CR2025 are common).`,
+                `Clean the contacts and ensure buttons aren’t stuck.`,
+                `Reprogram using the vehicle’s key-learning procedure or a locksmith.`
+            ],
+            partsIntro: `Grab:`,
+            parts: [
+                `Key fob battery`,
+                `Replacement key shell`,
+                `Programming service`
+            ],
+            caution: `Dropping the fob can crack the solder joints—handle carefully.`,
+            buyPrompt: `Say the word and I’ll source replacement fobs or batteries for you.`
         }
     }
 };
