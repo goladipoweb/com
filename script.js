@@ -1420,6 +1420,73 @@ const languageOptions = [
     { code: 'hausa', label: 'Hausa' }
 ];
 
+const mechanicalQuestionList = [
+    // Engine Problems
+    { id: 'overheating', category: 'Engine Problems', question: 'Why is my engine overheating?' },
+    { id: 'engineShake', category: 'Engine Problems', question: 'My car is shaking when I start it—what could be wrong?' },
+    { id: 'checkEngine', category: 'Engine Problems', question: 'Why is my “Check Engine” light on?' },
+    { id: 'fuelConsumption', category: 'Engine Problems', question: 'My car is consuming too much fuel, what is the cause?' },
+    { id: 'engineMisfire', category: 'Engine Problems', question: 'Why is my engine misfiring?' },
+    { id: 'exhaustSmoke', category: 'Engine Problems', question: 'Why is my exhaust producing black/white/blue smoke?' },
+    { id: 'oilType', category: 'Engine Problems', question: 'What type of engine oil should I use for my car?' },
+    { id: 'engineKnock', category: 'Engine Problems', question: 'My engine is making a knocking sound—what does that mean?' },
+    // Battery & Electrical
+    { id: 'noStart', category: 'Battery & Electrical', question: 'My car is not starting, is it the battery or starter?' },
+    { id: 'batteryDrain', category: 'Battery & Electrical', question: 'Why does my battery drain quickly?' },
+    { id: 'batteryReplacement', category: 'Battery & Electrical', question: 'How do I know if I need a new battery?' },
+    { id: 'dimLights', category: 'Battery & Electrical', question: 'My lights are dim—what could cause it?' },
+    { id: 'alternator', category: 'Battery & Electrical', question: 'My alternator may be bad—how do I confirm?' },
+    // Transmission & Gear
+    { id: 'autoJerking', category: 'Transmission & Gear', question: 'My automatic gear is jerking—why?' },
+    { id: 'gearSlipping', category: 'Transmission & Gear', question: 'Why is my gear slipping?' },
+    { id: 'transFluidInterval', category: 'Transmission & Gear', question: 'How often should I change transmission fluid?' },
+    { id: 'manualShift', category: 'Transmission & Gear', question: 'Why is my manual gear hard to shift?' },
+    // Brakes & Suspension
+    { id: 'softBrake', category: 'Brakes & Suspension', question: 'My brake pedal feels soft—what is the problem?' },
+    { id: 'brakeNoise', category: 'Brakes & Suspension', question: 'Why do my brakes squeal when I press them?' },
+    { id: 'wornShocks', category: 'Brakes & Suspension', question: 'My car is bouncing too much—do I need new shocks?' },
+    { id: 'steeringVibration', category: 'Brakes & Suspension', question: 'My steering wheel vibrates at high speed—what causes this?' },
+    { id: 'pulling', category: 'Brakes & Suspension', question: 'My car pulls to one side when driving—why?' },
+    // Cooling System
+    { id: 'coolantLoss', category: 'Cooling System', question: 'My radiator water finishes quickly—what should I check?' },
+    { id: 'trafficOverheat', category: 'Cooling System', question: 'Why is my car overheating in Lagos traffic?' },
+    { id: 'coolantVsWater', category: 'Cooling System', question: 'Do I need coolant or just water?' },
+    // Fuel System
+    { id: 'noAcceleration', category: 'Fuel System', question: 'My car refuses to accelerate when I press the pedal—why?' },
+    { id: 'jerkDriving', category: 'Fuel System', question: 'Why does my car “jerk” when driving?' },
+    { id: 'fuelConsumption', category: 'Fuel System', question: 'What is causing poor fuel economy?' },
+    { id: 'fuelAdditives', category: 'Fuel System', question: 'Should I use Nigerian fuel additives?' },
+    // Tyres & Wheels
+    { id: 'tyrePressure', category: 'Tyres & Wheels', question: 'What tyre pressure should I use?' },
+    { id: 'tyreWear', category: 'Tyres & Wheels', question: 'Why do my tyres wear out quickly?' },
+    { id: 'tyreReplacement', category: 'Tyres & Wheels', question: 'When should I change my tyres?' },
+    { id: 'hardSteering', category: 'Tyres & Wheels', question: 'Why is my steering hard?' },
+    // Air Conditioning
+    { id: 'acNotCooling', category: 'Air Conditioning', question: 'Why is my AC not cooling?' },
+    { id: 'acIntermittent', category: 'Air Conditioning', question: 'My AC cools sometimes and stops—why?' },
+    { id: 'acGasOrLeak', category: 'Air Conditioning', question: 'Do I need to refill gas or fix a leak?' },
+    // Car Maintenance
+    { id: 'serviceInterval', category: 'Car Maintenance', question: 'How often should I service my car?' },
+    { id: 'oilInterval', category: 'Car Maintenance', question: 'When should I change engine oil?' },
+    { id: 'oilType', category: 'Car Maintenance', question: 'What type of engine oil is best for Nigerian weather?' },
+    { id: 'preTrip', category: 'Car Maintenance', question: 'What should I check before a long trip?' },
+    { id: 'mechanicCheating', category: 'Car Maintenance', question: 'How do I know my mechanic is cheating me?' },
+    // Car Parts & Buying Advice
+    { id: 'partMatch', category: 'Car Parts & Buying Advice', question: 'Which part do I need for my car model?' },
+    { id: 'tokunboVsNew', category: 'Car Parts & Buying Advice', question: 'Should I buy Tokunbo or new parts?' },
+    { id: 'genuinePart', category: 'Car Parts & Buying Advice', question: 'How do I know if a part is original?' },
+    { id: 'affordableParts', category: 'Car Parts & Buying Advice', question: 'Where can I get affordable parts in Lagos?' },
+    // Warning Lights
+    { id: 'absLight', category: 'Warning Lights', question: 'What does the ABS light mean?' },
+    { id: 'batteryLight', category: 'Warning Lights', question: 'What does the battery light mean?' },
+    { id: 'oilLight', category: 'Warning Lights', question: 'What does the oil light mean?' },
+    { id: 'tractionLight', category: 'Warning Lights', question: 'What does the traction control light mean?' },
+    // Security & Anti-Theft
+    { id: 'immobilizer', category: 'Security & Anti-Theft', question: 'My immobilizer is not letting the car start—what can I do?' },
+    { id: 'alarm', category: 'Security & Anti-Theft', question: 'Why is my alarm going off randomly?' },
+    { id: 'keyFob', category: 'Security & Anti-Theft', question: 'My key fob is not working—how do I fix it?' }
+];
+
 const translations = {
     english: {
         languageSelected: `Great! I'll chat with you in {language}. How can I help today?`,
@@ -1447,7 +1514,13 @@ const translations = {
         howToSell: `To sell parts on GoLadipo:<ol><li>Sign up for an account</li><li>Open your dashboard</li><li>Use "Add Product" to list your parts</li><li>Keep your listings updated for buyers</li></ol><p>I can guide you through each step.</p>`,
         fallback: `I'm not sure I understood that. I can help you search for parts, apply filters, navigate the site, or answer questions about GoLadipo.`,
         priceAny: `Any`,
-        selectLanguageFirst: `Please choose a language to start chatting.`
+        selectLanguageFirst: `Please choose a language to start chatting.`,
+        assistPrompt: `Would you like me to search for parts or give mechanical advice?`,
+        optionSearch: `🔍 Search Parts`,
+        optionAdvice: `🛠️ Mechanical Advice`,
+        searchModeMessage: `Great! I've opened the search page. Tell me what part you need.`,
+        adviceModeMessage: `Here are common mechanical questions. Tap any one to see the fix and parts.`,
+        adviceListPrompt: `Select a question below:`
     },
     igbo: {
         languageSelected: `Ọ dị mma! Aga m asụ {language} mgbe anyị na-ekwurịta. Kedu ka m ga-esi nyere gị taa?`,
@@ -1475,7 +1548,13 @@ const translations = {
         howToSell: `Iji ree akụkụ na GoLadipo:<ol><li>Debanye akaụntụ</li><li>Meghee dashboard gị</li><li>Jiri "Add Product" tinye ngwaahịa</li><li>Debe ndepụta gị ka ndị na-azụ hụ ha</li></ol><p>Agam eduzi gị site na nzọụkwụ ọ bụla.</p>`,
         fallback: `Aghọtaghị m nke ahụ nke ọma. Enwere m ike inyere gị ịchọ akụkụ, tọọ nzacha, gbanwee weebụsaịtị, ma ọ bụ zaa ajụjụ gbasara GoLadipo.`,
         priceAny: `Ọ bụla`,
-        selectLanguageFirst: `Biko họrọ asụsụ tupu anyị bido ikwurịta.`
+        selectLanguageFirst: `Biko họrọ asụsụ tupu anyị bido ikwurịta.`,
+        assistPrompt: `Ịchọrọ ka m chọọ akụkụ ma ọ bụ nye ndụmọdụ ndị mekanik?`,
+        optionSearch: `🔍 Chọọ Akụkụ`,
+        optionAdvice: `🛠️ Ndụmọdụ Mekanik`,
+        searchModeMessage: `Ọ dị mma! Emegoro m ibe ọchụchọ. Gwa m akụkụ ịchọrọ.`,
+        adviceModeMessage: `Lee ajụjụ igwe anyị kachasị. Pịa nke ịchọrọ ka m kọwaa ya.`,
+        adviceListPrompt: `Họrọ ajụjụ n'okpuru:`
     },
     yoruba: {
         languageSelected: `O tayọ! Emi yoo ba ọ sọrọ ni {language}. Kini mo le ran ọ lọwọ loni?`,
@@ -1503,7 +1582,13 @@ const translations = {
         howToSell: `Lati ta lori GoLadipo:<ol><li>Ṣe àkọọlẹ tuntun</li><li>Ṣí dasibodu rẹ</li><li>Lo "Add Product" lati gbe ọja kalẹ</li><li>Máa ṣe imudojuiwọn atokọ rẹ fun awọn onra</li></ol><p>Emi yoo dari ọ ni gbogbo igbesẹ.</p>`,
         fallback: `Mi ò ye ohun tí o sọ. Mo le ran ọ lọwọ lati wa awọn ẹya, lo àlẹmọ, dari ọ kiri oju opo wẹẹbu, tabi dahun ibeere nipa GoLadipo.`,
         priceAny: `Ohunkóhun`,
-        selectLanguageFirst: `Jọwọ yan ede kan kí a tó bẹrẹ ibaraẹnisọrọ.`
+        selectLanguageFirst: `Jọwọ yan ede kan kí a tó bẹrẹ ibaraẹnisọrọ.`,
+        assistPrompt: `Ṣe ki n wa awọn ẹya fun ọ tabi fun ọ ni ìmọ̀ran mekaniki?`,
+        optionSearch: `🔍 Wa Awọn ẹya`,
+        optionAdvice: `🛠️ Ìmọ̀ran Mekaniki`,
+        searchModeMessage: `O tayọ! Mo ti ṣii oju-iwe wiwa. So fun mi ẹya tí o fẹ.`,
+        adviceModeMessage: `Eyi ni awọn ibeere to wọpọ. Tẹ ọkan ki n ṣalaye atunṣe ati awọn ẹya.`,
+        adviceListPrompt: `Yan ibeere isalẹ:`
     },
     pidgin: {
         languageSelected: `Correct! I go yarn you for {language}. Wetin you wan make I do today?`,
@@ -1531,7 +1616,13 @@ const translations = {
         howToSell: `To sell for GoLadipo:<ol><li>Register new account</li><li>Enter your dashboard</li><li>Use "Add Product" put your parts</li><li>Dey update the listings make buyers see am</li></ol><p>I fit guide you anytime.</p>`,
         fallback: `I no too understand that one. I fit help you find parts, add filters, show you page, or answer GoLadipo questions.`,
         priceAny: `Any`,
-        selectLanguageFirst: `Abeg choose language first make we start to yarn.`
+        selectLanguageFirst: `Abeg choose language first make we start to yarn.`,
+        assistPrompt: `You wan make I search parts or make I give you mechanic advice?`,
+        optionSearch: `🔍 Search Parts`,
+        optionAdvice: `🛠️ Mechanic Advice`,
+        searchModeMessage: `Okay! I don open the search page. Tell me the part you need.`,
+        adviceModeMessage: `See common wahala wey I fit solve. Tap anyone and I go yarn the fix.`,
+        adviceListPrompt: `Choose question wey match your issue:`
     },
     hausa: {
         languageSelected: `Madalla! Zan yi magana da kai a {language}. Ta yaya zan taimake ka yau?`,
@@ -1559,7 +1650,13 @@ const translations = {
         howToSell: `Don sayarwa a GoLadipo:<ol><li>Yi rajista da sabon asusu</li><li>Buɗe dashboard ɗinka</li><li>Yi amfani da "Add Product" don ɗora kayayyaki</li><li>Sabunta jerin kayayyaki akai-akai domin masu siye su gani</li></ol><p>Zan iya jagorantar ka a kowane mataki.</p>`,
         fallback: `Ban gane abin da ka ce ba. Zan iya taimaka maka da binciken kayayyaki, matattara, ko tambayoyi game da GoLadipo.`,
         priceAny: `Duk farashi`,
-        selectLanguageFirst: `Da fatan ka zaɓi harshe kafin mu fara hira.`
+        selectLanguageFirst: `Da fatan ka zaɓi harshe kafin mu fara hira.`,
+        assistPrompt: `Kana so in nemo maka sassa ko in ba ka shawarar makaniki?`,
+        optionSearch: `🔍 Nemo Sassa`,
+        optionAdvice: `🛠️ Shawarar Makaniki`,
+        searchModeMessage: `Madalla! Na buɗe shafin bincike. Faɗa min sassan da kake nema.`,
+        adviceModeMessage: `Ga tambayoyin da aka fi yawan yi. Danna ɗaya don ganin mafita.`,
+        adviceListPrompt: `Zaɓi tambaya daga ƙasa:`
     }
 };
 
@@ -2881,6 +2978,7 @@ const mechanicalAdviceContent = {
 let selectedLanguage = null;
 let hasWelcomedUser = false;
 let languageButtonsContainer = null;
+let chatMode = null;
 
 // Initialize chatbox
 function initChatbox() {
@@ -2920,6 +3018,10 @@ function initChatbox() {
                 handleChatboxSend();
             }
         });
+    }
+
+    if (chatboxMessages) {
+        chatboxMessages.addEventListener('click', handleChatboxAction);
     }
 
     addLanguageSelectorBlock(true);
@@ -3023,6 +3125,89 @@ function addLanguageSelectorBlock(clearExisting = false) {
     }
 }
 
+function promptInteractionMode() {
+    const prompt = getTranslation('assistPrompt');
+    const searchLabel = getTranslation('optionSearch');
+    const adviceLabel = getTranslation('optionAdvice');
+    
+    const html = `
+        <p>${prompt}</p>
+        <div class="chat-actions horizontal">
+            <button type="button" class="chat-action" data-action="select-mode" data-mode="search">${searchLabel}</button>
+            <button type="button" class="chat-action" data-action="select-mode" data-mode="advice">${adviceLabel}</button>
+        </div>
+    `;
+    
+    addMessageToChat(html, 'bot');
+}
+
+function handleChatboxAction(event) {
+    const target = event.target.closest('[data-action]');
+    if (!target) return;
+    
+    const action = target.dataset.action;
+    
+    if (action === 'select-mode') {
+        handleModeSelection(target.dataset.mode);
+    } else if (action === 'mechanical-question') {
+        const topicId = target.dataset.topicId;
+        if (topicId) {
+            showMechanicalAdviceTopic(topicId);
+        }
+    }
+}
+
+function handleModeSelection(mode) {
+    if (mode === 'search') {
+        chatMode = 'search';
+        sendBotResponse('searchModeMessage');
+        navigateToPage('search');
+        setTimeout(() => {
+            if (searchInput) {
+                searchInput.focus();
+            }
+        }, 400);
+    } else if (mode === 'advice') {
+        chatMode = 'mechanical';
+        sendBotResponse('adviceModeMessage');
+        displayMechanicalQuestionList();
+    }
+}
+
+function displayMechanicalQuestionList() {
+    if (!mechanicalQuestionList.length) return;
+    
+    const intro = getTranslation('adviceListPrompt');
+    const grouped = mechanicalQuestionList.reduce((acc, item) => {
+        if (!acc[item.category]) {
+            acc[item.category] = [];
+        }
+        acc[item.category].push(item);
+        return acc;
+    }, {});
+    
+    let html = `<p>${intro}</p>`;
+    
+    Object.keys(grouped).forEach(category => {
+        html += `<p><strong>${category}</strong></p><div class="chat-actions">`;
+        grouped[category].forEach(question => {
+            html += `<button type="button" class="chat-action" data-action="mechanical-question" data-topic-id="${question.id}">${question.question}</button>`;
+        });
+        html += '</div>';
+    });
+    
+    addMessageToChat(html, 'bot');
+}
+
+function showMechanicalAdviceTopic(topicId) {
+    const advice = buildMechanicalAdviceMessage(topicId);
+    if (advice) {
+        addMessageToChat(advice, 'bot');
+    } else {
+        sendBotResponse('fallback');
+    }
+}
+
 function handleLanguageSelection(languageCode) {
     const optionExists = languageOptions.some(option => option.code === languageCode);
     if (!optionExists) return;
@@ -3045,6 +3230,8 @@ function handleLanguageSelection(languageCode) {
     sendBotResponse('languageSelected', { language: getLanguageNativeName(languageCode) });
     sendBotResponse('welcomeMessage');
     hasWelcomedUser = true;
+    chatMode = null;
+    promptInteractionMode();
 }
 
 function getLanguageNativeName(languageCode) {

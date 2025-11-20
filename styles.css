@@ -1606,6 +1606,35 @@ body {
     color: var(--white);
 }
 
+.chat-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.chat-actions.horizontal {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.chat-action {
+    padding: 0.6rem 0.85rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: var(--white);
+    cursor: pointer;
+    font-weight: 600;
+    text-align: left;
+    transition: var(--transition);
+}
+
+.chat-action:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: var(--primary-light);
+}
+
 .language-buttons {
     display: flex;
     flex-wrap: wrap;
