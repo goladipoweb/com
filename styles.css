@@ -572,7 +572,7 @@ body {
 .product-image {
     height: 220px;
     width: 100%;
-    object-fit: cover;
+    object-fit: contain;
     transition: var(--transition);
 }
 
@@ -1816,3 +1816,30 @@ body {
         height: 56px;
     }
 }
+
+/* Social Media Icons */
+.social-links {
+    margin-top: 10px;
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    font-size: 22px;
+    color: #ffffff;
+    background: #333;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #ffcc00;
+    color: #000;
+    transform: translateY(-5px);
+}
+
